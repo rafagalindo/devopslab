@@ -16,7 +16,7 @@ script:
 # Definir o Deploy no Heroku
 deploy:
   provider: heroku
-  api_key: $Heroku-apikey
+  api_key: $apikeyheroku
   edge: true
   app: developslab-galindo
   on:
