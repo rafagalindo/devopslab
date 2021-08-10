@@ -28,5 +28,5 @@ deploy:
     branch: main
 before_install:
 - openssl aes-256-cbc -K $encrypted_c0fe2e4b1c11_key -iv $encrypted_c0fe2e4b1c11_iv
-- in lab-devops-cloud-galindo-a39ff5f614fd.json.enc -out /vagrant/lab-devops-cloud-galindo-a39ff5f614fd.json
-- d
+  -in lab-devops-cloud-galindo-a39ff5f614fd.json.enc -out /vagrant/lab-devops-cloud-galindo-a39ff5f614fd.json
+  -d
