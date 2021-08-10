@@ -15,10 +15,18 @@ script:
 
 # Definir o Deploy no Heroku
 deploy:
-  provider: heroku
+- provider: heroku
   api_key: $apikeyheroku
   edge: true
   app: developslab-galindo
   on:
-      branch: main
-
+    branch: main
+- provider: gae
+  keyfile: ../lab-devops-cloud-galindo-a39ff5f614fd.json
+  project: lab-devops-cloud-galindo
+  on:
+    branch: main
+before_install:
+- openssl aes-256-cbc -K $encrypted_c0fe2e4b1c11_key -iv $encrypted_c0fe2e4b1c11_iv
+- in lab-devops-cloud-galindo-a39ff5f614fd.json.enc -out /vagrant/lab-devops-cloud-galindo-a39ff5f614fd.json
+- d
