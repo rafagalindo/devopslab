@@ -22,7 +22,7 @@ deploy:
   on:
     branch: main
 - provider: gae
-  keyfile: ../lab-devops-cloud-galindo-a39ff5f614fd.json
+  keyfile: /home/travis/lab-devops-cloud-galindo-a39ff5f614fd.json
   project: lab-devops-cloud-galindo
   on:
     branch: main
