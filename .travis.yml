@@ -13,6 +13,10 @@ before_install:
   -in lab-devops-cloud-galindo-a39ff5f614fd.json.enc -out /home/travis/lab-devops-cloud-galindo-a39ff5f614fd.json
   -d
 
+addons:
+  sonarcloud:
+    organization: rafagalindo
+    token: ${SONAR_TOKEN}
 
 jobs:
   include:
@@ -28,7 +32,9 @@ jobs:
         - coverage xml app.py || travis_terminate 1;
 
     - stage: STG Deploy
-      script: skip
+      script:
+        - python -m unittest -v test || travis_terminate 1;
+        - sonar-scanner || travis_terminate 1;
       # Definir o Deploy no Heroku
       deploy:
         provider: heroku
@@ -44,7 +50,9 @@ jobs:
         - curl https://developslab-galindo.herokuapp.com | grep Hello || travis_terminate 1;
 
     - stage: PROD Deploy
-      script: skip
+      script:
+        - python -m unittest -v test || travis_terminate 1;
+        - sonar-scanner || travis_terminate 1;
       # Definir o Deploy no Google Cloud
       deploy:
         provider: gae
