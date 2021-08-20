@@ -55,5 +55,4 @@ jobs:
 
     - stage: PROD TEST
       script:
-        - curl https://projeto01gaby.uc.r.appspot.com/ | grep Hello || travis_terminate 1;
-
+        - curl https://lab-devops-cloud-galindo.uc.r.appspot.com | grep Hello || travis_terminate 1;
