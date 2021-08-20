@@ -25,7 +25,7 @@ jobs:
       name: "Testes Unitarios"
       # Instalação de Módulos que são necessários para a Aplicação.
       install:
-        - pip install flask flask-wtf
+        - pip install flask flask-wtf coverage
       script:  # Defini o script de Teste que deve rodar toda vez que o código for alterado.
         - coverage run test.py || travis_terminate 1;
         - coverage report app.py || travis_terminate 1;
