@@ -48,6 +48,8 @@ jobs:
     - stage: STG TEST
       script:
         - curl https://developslab-galindo.herokuapp.com | grep Hello || travis_terminate 1;
+        - python -m unittest -v test || travis_terminate 1;
+        - sonar-scanner || travis_terminate 1;
 
     - stage: PROD Deploy
       script:
@@ -64,3 +66,6 @@ jobs:
     - stage: PROD TEST
       script:
         - curl https://lab-devops-cloud-galindo.uc.r.appspot.com | grep Hello || travis_terminate 1;
+        - python -m unittest -v test || travis_terminate 1;
+        - sonar-scanner || travis_terminate 1;
+
