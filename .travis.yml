@@ -37,9 +37,9 @@ jobs:
         - pip install flask flask-wtf coverage
       script:
         - python -m unittest -v test || travis_terminate 1;
-        - coverage run test.py || travis_terminate 1;
-        - coverage report app.py || travis_terminate 1;
-        - coverage xml app.py || travis_terminate 1;
+          #- coverage run test.py || travis_terminate 1;
+          #- coverage report app.py || travis_terminate 1;
+          #- coverage xml app.py || travis_terminate 1;
         - sonar-scanner || travis_terminate 1;
      
       # Definir o Deploy no Heroku
@@ -69,9 +69,9 @@ jobs:
       script:
         - python -m unittest -v test || travis_terminate 1;
         - coverage run test.py || travis_terminate 1;
-        - coverage report app.py || travis_terminate 1;
-        - coverage xml app.py || travis_terminate 1;
-        - sonar-scanner || travis_terminate 1;
+          # - coverage report app.py || travis_terminate 1;
+          #- coverage xml app.py || travis_terminate 1;
+          #- sonar-scanner || travis_terminate 1;
       # Definir o Deploy no Google Cloud
       deploy:
         provider: gae
