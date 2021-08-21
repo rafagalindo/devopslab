@@ -59,9 +59,9 @@ jobs:
         - curl https://developslab-galindo.herokuapp.com | grep Laboratorio || travis_terminate 1;
         - python -m unittest -v test || travis_terminate 1;
         - sonar-scanner || travis_terminate 1;
-        - coverage run test.py || travis_terminate 1;
-        - coverage report app.py || travis_terminate 1;
-        - coverage xml app.py || travis_terminate 1;
+          #- coverage run test.py || travis_terminate 1;
+          #- coverage report app.py || travis_terminate 1;
+          #- coverage xml app.py || travis_terminate 1;
 
     - stage: PROD Deploy
       install:
@@ -87,7 +87,7 @@ jobs:
         - curl https://lab-devops-cloud-galindo.uc.r.appspot.com | grep Laboratorio || travis_terminate 1;
         - python -m unittest -v test || travis_terminate 1;
         - sonar-scanner || travis_terminate 1;
-        - coverage run test.py || travis_terminate 1;
-        - coverage report app.py || travis_terminate 1;
-        - coverage xml app.py || travis_terminate 1;
+          #- coverage run test.py || travis_terminate 1;
+          #- coverage report app.py || travis_terminate 1;
+          #- coverage xml app.py || travis_terminate 1;
 
