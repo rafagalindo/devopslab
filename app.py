@@ -8,6 +8,7 @@ csrf = CSRFProtect(app)
 @app.route("/")
 def pagina_inicial():
     return "Laboratorio Pipeline DevOps"
+
 @app.route('/bug')                                                                                                                                
 if __name__ == '__main__':
     app.run(debug=True)
