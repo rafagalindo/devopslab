@@ -6,8 +6,6 @@ app = Flask(__name__)
 csrf = CSRFProtect(app)                                                                                                                           
 @app.route("/")
 def pagina_inicial():
-    return "Laboratorio Pipeline DevOps"
+    return "Laboratorio DevOps"
 if __name__ == '__main__':
     app.run(debug=True)
-
-
